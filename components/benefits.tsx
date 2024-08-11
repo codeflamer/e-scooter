@@ -4,8 +4,8 @@ import React from "react";
 const Benefits = () => {
   return (
     <section className="text-base-black ">
-      <div className="flex justify-between p-5 max-w-screen-2xl mx-auto">
-        <div>
+      <div className="flex justify-between p-5 max-w-screen-2xl mx-auto items-center flex-col lg:flex-row space-y-5 lg:space-y-0">
+        <div className="">
           <h3 className="uppercase text-[25px] font-semibold">
             Гарантия 1 год
           </h3>

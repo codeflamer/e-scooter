@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "swiper/css";
+import "swiper/css/navigation";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import ReactQueryProvider from "@/lib/react-query-provider";
