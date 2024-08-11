@@ -9,6 +9,7 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import Search from "./search";
+import Link from "next/link";
 
 const FunctionHeader = () => {
   return (
@@ -40,13 +41,15 @@ const FunctionHeader = () => {
             />
           </li>
           <li className="space-x-1 inline-block">
-            <Badge count={5} offset={[0, 20]} size="small">
-              <ShoppingCartOutlined
-                className="cursor-pointer"
-                style={{ fontSize: "20px", color: "black" }}
-              />
-            </Badge>
-            <span className="text-[18px]"> Корзина</span>
+            <Link href="/cart">
+              <Badge count={5} offset={[0, 20]} size="small">
+                <ShoppingCartOutlined
+                  className="cursor-pointer"
+                  style={{ fontSize: "20px", color: "black" }}
+                />
+              </Badge>
+              <span className="text-[18px]"> Корзина</span>
+            </Link>
           </li>
         </ul>
       </div>
