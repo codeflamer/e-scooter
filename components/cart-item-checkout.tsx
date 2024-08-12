@@ -1,8 +1,11 @@
 import { Button, Checkbox } from "antd";
 import React from "react";
 import type { CheckboxProps } from "antd";
+import { useProductCart } from "@/app/cart/carts.store";
 
 const CartItemCheckout = () => {
+  const totalAmount = useProductCart((state) => state.totalAmount);
+
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
@@ -13,20 +16,20 @@ const CartItemCheckout = () => {
         <div className="text-base-black">
           <h6 className="text-[12px]">Итого</h6>
           <span className="text-[25px] font-semibold mb-[10px] inline-block">
-            58 800 ₽
+            {totalAmount} ₽
           </span>
           <hr />
           <ul className="flex justify-between items-center space-x-10 mt-[16px]">
             <li className="text-[12px] ">Стоимость товаров</li>
-            <li className="font-semibold">58 800 ₽</li>
+            <li className="font-semibold">{totalAmount} ₽</li>
           </ul>
           <ul className="flex justify-between items-center space-x-10 mt-[16px]">
             <li className="text-[12px] ">Сумма скидки</li>
-            <li className="font-semibold">8 000 ₽</li>
+            <li className="font-semibold">50 ₽</li>
           </ul>
           <ul className="flex justify-between items-center space-x-10 my-[16px]">
             <li className="text-[12px] ">Итого без учета доставки</li>
-            <li className="font-semibold">50 800 ₽</li>
+            <li className="font-semibold">{totalAmount - 30} ₽</li>
           </ul>
           <hr />
           <div className="mt-[20px] flex flex-col items-center">

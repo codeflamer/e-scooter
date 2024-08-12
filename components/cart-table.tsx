@@ -14,13 +14,11 @@ const CartTable = () => {
         <h5 className="col-span-2 text-center">Сумма</h5>
         <h5 className="col-span-2 text-center">Удалить все</h5>
       </div>
-      {cartItems.map((product: ProductType) => (
+      {cartItems.map((product: ProductType & { count: number }) => (
         <Fragment key={product.id}>
           <CartItem product={product} />
         </Fragment>
       ))}
-      {/* <CartItem />
-      <CartItem /> */}
     </div>
   );
 };

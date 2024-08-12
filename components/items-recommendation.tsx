@@ -64,7 +64,7 @@ const ItemsRecommendation = () => {
           className="mySwiper"
           breakpoints={{
             320: {
-              centeredSlides: true,
+              centeredSlides: false,
             },
             640: {
               slidesPerView: 1.5,
@@ -84,7 +84,7 @@ const ItemsRecommendation = () => {
           }}
         >
           <div
-            className="swiper-button-prev-custom z-10 shadow-lg absolute top-[220px] left-40 text-white w-[40px] h-[40px] bg-base rounded-full text-[20px] font-semibold flex flex-col items-center justify-center"
+            className="swiper-button-prev-custom z-10 shadow-lg absolute top-[260px] sm:top-[220px] left-20 sm:left-40 text-white w-[40px] h-[40px] bg-base rounded-full text-[20px] font-semibold flex flex-col items-center justify-center"
             style={{
               boxShadow: "0 10px 15px -3px #6F73EE, 0 4px 6px -2px #6F73EE",
             }}
@@ -95,7 +95,7 @@ const ItemsRecommendation = () => {
             style={{
               boxShadow: "0 10px 15px -3px #6F73EE, 0 4px 6px -2px #6F73EE",
             }}
-            className="swiper-button-next-custom z-10 shadow-lg absolute top-[220px] right-40 text-white w-[40px] h-[40px] bg-base rounded-full text-[20px] font-semibold flex flex-col items-center justify-center"
+            className="swiper-button-next-custom z-10 shadow-lg absolute top-[260px] sm:top-[220px] right-20 sm:right-40 text-white w-[40px] h-[40px] bg-base rounded-full text-[20px] font-semibold flex flex-col items-center justify-center"
           >
             <RightOutlined className="cursor-pointer" />
           </div>

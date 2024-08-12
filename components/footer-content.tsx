@@ -5,7 +5,7 @@ const FooterContent = () => {
   return (
     <footer className="p-5 max-w-screen-2xl mx-auto">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="flex justify-between space-x-4 mt-[25px]">
+        <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between sm:space-x-4 mt-[25px]">
           <div>
             <h4 className="font-semibold text-[18px]">Каталог товаров</h4>
             <ul className="text-[#5D6C7B] text-[14px] space-y-3 mt-[17px]">
@@ -34,7 +34,7 @@ const FooterContent = () => {
           </div>
           <div>
             <h4 className="font-semibold text-[18px]">Контакты</h4>
-            <div className="flex mt-[14px] space-x-4 justify-between">
+            <div className="flex flex-col md:flex-row mt-[14px] space-y-2 md:space-y-0 md:space-x-4 justify-between">
               <section className="space-y-2">
                 <span className="text-[12px]">Call-центр</span>
                 <p className="text-[16px] font-semibold hover:underline cursor-pointer">
@@ -63,18 +63,18 @@ const FooterContent = () => {
 
         <div className="flex space-x-[70px] mt-[36px]">
           <span className="text-[25px] font-bold text-[#282739]">KUGOO</span>
-          <div className="flex space-x-4">
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
             <div className="bg-white rounded-md flex items-center space-x-3 p-3 max-w-[200px] cursor-pointer hover:scale-105 transition-all">
               <span>Icon</span>
               <div className="flex flex-col">
                 <span className="text-[12px] inline-block">Доступно на</span>
-                <span className="font-bold text-[20px] inline-block">
+                <span className="font-bold text-[16px] md:text-[20px] inline-block">
                   Google Play
                 </span>
               </div>
             </div>
             {/* Apple Icon  */}
-            <div className="bg-white rounded-md flex items-center space-x-3 p-3 max-w-[200px] cursor-pointer hover:scale-105 transition-all">
+            <div className=" bg-white rounded-md flex items-center space-x-3 p-3 max-w-[200px] cursor-pointer hover:scale-105 transition-all">
               <span>
                 <Image
                   src="/icons/AppleIcon.svg"
@@ -85,7 +85,7 @@ const FooterContent = () => {
               </span>
               <div className="flex flex-col">
                 <span className="text-[12px] inline-block">Загрузите в</span>
-                <span className="font-bold text-[20px] inline-block">
+                <span className="font-bold text-[16px] md:text-[20px] inline-block">
                   Apple Store
                 </span>
               </div>

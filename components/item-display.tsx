@@ -9,22 +9,31 @@ const ItemDisplay = ({ product }: { product: ProductType }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   return (
     <section className=" mx-auto">
-      <div className="w-[570px] relative">
+      <div className="md:w-[570px] relative w-[280px] sm:w-[320px] mx-auto">
         <Swiper
           spaceBetween={10}
           navigation={true}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper2 h-[426px] rounded-md"
+          className="mySwiper2 md:h-[426px] rounded-md "
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img
               alt="here"
-              src={product.image}
+              src=""
               className="w-[570px] h-[426px]"
             />
-          </SwiperSlide>
-          <SwiperSlide>
+          </SwiperSlide> */}
+          {product.images?.map((image, key) => (
+            <SwiperSlide key={key}>
+              <img
+                alt="here"
+                src={image}
+                className="md:w-[570px] md:h-[426px]"
+              />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide>
             <img
               alt="here"
               src="/images/clear-scooter.jpg"
@@ -72,11 +81,11 @@ const ItemDisplay = ({ product }: { product: ProductType }) => {
               src="/images/test-7.jpg"
               className="w-[570px] h-[426px]"
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
         <div>
           <div className="absolute top-[15px] left-[10px] bg-[#75D14A] text-white text-center text-[12px] py-1 px-1 w-[110px] rounded-lg z-10">
-            Новинка 2021
+            Новинка 2024
           </div>
         </div>
         <Swiper
@@ -86,16 +95,25 @@ const ItemDisplay = ({ product }: { product: ProductType }) => {
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper mt-5"
+          className="mySwiper mt-3"
         >
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img
               alt="here"
               src={product.image}
               className="h-[73px] rounded-lg hover:cursor-pointer"
             />
-          </SwiperSlide>
-          <SwiperSlide>
+          </SwiperSlide> */}
+          {product.images?.map((image, key) => (
+            <SwiperSlide key={key}>
+              <img
+                alt="here"
+                src={image}
+                className="h-[50px] md:h-[73px] rounded-lg hover:cursor-pointer"
+              />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide>
             <img
               alt="here"
               src="/images/clear-scooter.jpg"
@@ -143,7 +161,7 @@ const ItemDisplay = ({ product }: { product: ProductType }) => {
               src="/images/test-7.jpg"
               className="h-[73px] w-[73px] rounded-lg hover:cursor-pointer"
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </section>

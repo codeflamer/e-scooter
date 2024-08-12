@@ -1,5 +1,4 @@
 type ProductType = {
-  category: string;
   description: string;
   id: number;
   image: string;
@@ -9,4 +8,5 @@ type ProductType = {
     count: number;
     rate: number;
   };
+  images?: string[];
 };

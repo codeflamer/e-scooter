@@ -16,9 +16,11 @@ const FunctionHeader = () => {
 
   return (
     <div className="flex justify-between items-center p-5 space-x-10">
-      <span className="text-[25px] font-bold">KUGOO</span>
+      <Link href="/">
+        <span className="text-[25px] font-bold">KUGOO</span>
+      </Link>
 
-      <div className="space-x-4 flex  flex-1 items-center">
+      <div className="space-x-4 sm:flex-row  flex-1 items-center hidden sm:flex">
         <Button
           className="!py-5 !hover:border-none !hover:outline-none"
           style={{ fontSize: "18px", background: "#6F73EE", color: "white" }}
@@ -26,7 +28,7 @@ const FunctionHeader = () => {
           <AlignRightOutlined />
           Каталог
         </Button>
-        <div className="w-full hidden sm:flex">
+        <div className="w-full ">
           <Search />
         </div>
       </div>

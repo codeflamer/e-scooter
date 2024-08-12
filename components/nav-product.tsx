@@ -1,8 +1,11 @@
+"use client";
+import { useProduct } from "@/hooks/query-hooks";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import React from "react";
 
-const NavProduct = () => {
+const NavProduct = ({ productId }: { productId: number }) => {
+  const { product, isLoading } = useProduct(productId);
   return (
     <div>
       <Breadcrumb
@@ -29,7 +32,7 @@ const NavProduct = () => {
             className: "!cursor-pointer",
           },
           {
-            title: "Kugoo Kirin M4",
+            title: product?.title,
             className: "!cursor-pointer",
           },
         ]}

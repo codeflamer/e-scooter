@@ -5,8 +5,8 @@ import React from "react";
 const BannerShowCase = () => {
   return (
     <section className="px-5 flex justify-between max-w-screen-2xl mx-auto space-y-5 xl:space-y-0 xl:space-x-5 flex-col xl:flex-row">
-      <div className="rounded-lg flex justify-between bg-[#F4F7FB] relative h-[250px]">
-        <div className="space-y-4 ml-[40px] w-[400px] flex flex-col justify-center">
+      <div className="rounded-lg flex justify-between bg-[#F4F7FB] relative h-[250px] w-full">
+        <div className="space-y-4 ml-[40px] w-[400px] flex flex-col justify-center z-10">
           <div className="font-semibold text-[30px]">
             Подбор модели электросамоката
           </div>
@@ -19,10 +19,10 @@ const BannerShowCase = () => {
           </div>
         </div>
         <div>
-          <div className="-z-1 border-base w-40 h-full bg-radial-base rounded-bl-[200px] rounded-md ">
+          <div className="absolute right-0 -z-1 border-base w-40  md:w-60 h-full bg-radial-base rounded-bl-[200px] rounded-md ">
             <Image
               alt="image"
-              className="absolute right-0 hidden md:block z-99 "
+              className="absolute right-0 bottom-0 hidden md:block z-99  h-full"
               height="250"
               width="250"
               src="/images/scotter-banner.png"
@@ -30,8 +30,8 @@ const BannerShowCase = () => {
           </div>
         </div>
       </div>
-      <div className="rounded-lg flex justify-between bg-[#F4F7FB] relative h-[250px]">
-        <div className="space-y-4 ml-[40px] w-[400px] flex flex-col justify-center">
+      <div className=" rounded-lg flex justify-between bg-[#F4F7FB] relative h-[250px] w-full">
+        <div className="z-10 space-y-4 ml-[40px] w-[400px] flex flex-col justify-center">
           <div className="font-semibold text-[30px]">
             Сервисное обслуживание
           </div>
@@ -44,10 +44,10 @@ const BannerShowCase = () => {
           </div>
         </div>
         <div>
-          <div className="-z-1  border-base w-40 h-full bg-radial-base rounded-bl-[200px] rounded-md">
+          <div className="absolute right-0 -z-1 border-base w-40 md:w-60 h-full bg-radial-base rounded-bl-[200px] rounded-md">
             <Image
               alt="image"
-              className="absolute right-0 hidden md:block z-99  w-[250px] h-[250px]"
+              className="absolute right-0 hidden md:block z-99 w-[250px]  h-full"
               height="250"
               width="250"
               src="/images/woman-electric.png"

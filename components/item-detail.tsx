@@ -5,7 +5,6 @@ import ItemDisplay from "./item-display";
 import ItemProperties from "./item-properties";
 import { useProduct } from "@/hooks/query-hooks";
 const ItemDetail = ({ productId }: { productId: number }) => {
-  console.log(productId);
   const { product, isLoading } = useProduct(productId);
 
   if (isLoading) {

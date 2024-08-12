@@ -12,7 +12,7 @@ const BannerDelivery = () => {
           <Image src="/images/drone.png" alt="drone" height="600" width="600" />
         </div>
         {/* Right */}
-        <div className="flex flex-col space-y-1 py-3 mx-auto justify-center">
+        <div className="flex flex-col space-y-1 py-3 mx-auto justify-center p-4">
           <div className="bg-[#EE685F] text-center text-white rounded-md py-1 px-2 text-[14px] w-[62px]">
             Акция
           </div>

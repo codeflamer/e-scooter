@@ -12,7 +12,9 @@ const ItemProperties = ({ product }: { product: ProductType }) => {
   return (
     <div className="text-base-black flex-1">
       <div>
-        <h2 className="font-semibold text-[35px]">{product.title}</h2>
+        <h2 className="font-semibold text-[25px] md:text-[35px]">
+          {product.title}
+        </h2>
         <ul className="text-[12px] flex space-x-7 text-[#5D6C7B]">
           <li>Просмотров 350</li>
           <li>Купили 196 раз</li>
@@ -20,12 +22,12 @@ const ItemProperties = ({ product }: { product: ProductType }) => {
         </ul>
       </div>
       <div className="mt-[20px]">
-        <ul className="flex items-center space-x-6">
-          <li className="flex items-center space-x-1">
+        <ul className="flex items-center flex-wrap">
+          <li className="flex flex-1 items-center space-x-1 mr-4">
             <span className="block w-2 h-2 bg-[#75D14A] rounded-full mr-1"></span>
-            <span> В наличии</span>
+            <span className="whitespace-nowrap"> В наличии</span>
           </li>
-          <li className="flex space-x-2 items-center">
+          <li className="flex flex-1 space-x-2 items-center">
             {" "}
             <img
               alt="example"
@@ -43,8 +45,12 @@ const ItemProperties = ({ product }: { product: ProductType }) => {
 
       <div className="flex justify-between items-center space-x-5 mt-[32px]">
         <div>
-          <span className="block line-through text-[#5D6C7B]">39 900 ₽</span>
-          <span className="text-[25px] font-semibold">{product.price} ₽</span>
+          <span className="block line-through text-[#5D6C7B] text-[14px] sm:text-[16px]">
+            39 900 ₽
+          </span>
+          <span className="text-[18px] sm:text-[25px] font-semibold">
+            {product.price} ₽
+          </span>
         </div>
         <div className="bg-[#F4F7FB] py-[7px] px-[14px] flex justify-between space-x-5 items-center rounded-lg">
           <p>
@@ -170,7 +176,7 @@ const ItemProperties = ({ product }: { product: ProductType }) => {
           <h5 className="text-[18px] font-semibold mb-[23px]">
             2 подарка при покупке
           </h5>
-          <div className="flex items-center justify-between space-x-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between sm:space-x-4 space-y-4 sm:space-y-0">
             <div className="flex items-center justify-between space-x-4">
               <img
                 alt="example"
@@ -252,7 +258,7 @@ const ItemProperties = ({ product }: { product: ProductType }) => {
             </p>
           </div>
         </div>
-        <div className="flex justify-between items-center space-x-6 mt-[30px]">
+        <div className="flex flex-col md:flex-row justify-between items-center md:space-x-6 mt-[30px] space-y-3 md:space-y-0">
           <Button
             htmlType="button"
             className="!bg-base !border-none !border-2 border-base !text-base !py-6 !px-4  !text-white !text-[14px] w-full hover:scale-105"

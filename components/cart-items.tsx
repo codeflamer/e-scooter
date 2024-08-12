@@ -11,7 +11,11 @@ const CartItems = () => {
   return (
     <section>
       <h2 className="mb-[30px] text-[35px] font-semibold">Моя корзина</h2>
-      {cartItems.length > 0 ? <CartWithItems /> : <EmptyCart />}
+      {cartItems.length > 0 ? (
+        <CartWithItems cartItems={cartItems} />
+      ) : (
+        <EmptyCart />
+      )}
     </section>
   );
 };

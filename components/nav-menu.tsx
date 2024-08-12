@@ -5,7 +5,7 @@ import React from "react";
 const NavMenu = () => {
   return (
     <nav className="flex justify-between p-5 items-center space-x-3">
-      <section className="flex items-center space-x-7">
+      <section className="flex items-center space-x-7 justify-between sm:justify-start w-full">
         <div className="w-[60px] ">
           <Image
             src="/logo/service.svg"
@@ -15,8 +15,12 @@ const NavMenu = () => {
             className="cursor-pointer"
           />
         </div>
-        <div className="text-[#5D6C7B] cursor-pointer">Сотрудничество</div>
-        <div className="text-[#5D6C7B] cursor-pointer">Заказать звонок</div>
+        <div className="text-[#5D6C7B] cursor-pointer hidden sm:flex">
+          Сотрудничество
+        </div>
+        <div className="text-[#5D6C7B] cursor-pointer hidden sm:flex">
+          Заказать звонок
+        </div>
         <ul className="flex space-x-4">
           <li className="w-[25px] h-[25px]">
             <Image
@@ -48,8 +52,10 @@ const NavMenu = () => {
         </ul>
       </section>
 
-      <div className="md:flex space-x-4 hidden">
-        <span>+7 (800) 505-54-61</span>
+      <div className="sm:flex space-x-4 hidden">
+        <span className="inline-block whitespace-nowrap">
+          +7 (800) 505-54-61
+        </span>
         <p>
           <PlusCircleOutlined
             className="cursor-pointer"
