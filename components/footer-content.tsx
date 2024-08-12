@@ -55,7 +55,7 @@ const FooterContent = () => {
               </section>
             </div>
           </div>
-          <span className="text-base cursor-pointer hover:underline">
+          <span className="text-base cursor-pointer hover:underline hidden md:flex">
             Заказать звонок
           </span>
         </div>

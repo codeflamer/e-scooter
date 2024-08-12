@@ -48,7 +48,7 @@ const NavMenu = () => {
         </ul>
       </section>
 
-      <div className="flex space-x-4">
+      <div className="md:flex space-x-4 hidden">
         <span>+7 (800) 505-54-61</span>
         <p>
           <PlusCircleOutlined

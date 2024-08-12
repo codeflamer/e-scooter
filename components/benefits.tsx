@@ -5,19 +5,23 @@ const Benefits = () => {
   return (
     <section className="text-base-black ">
       <div className="flex justify-between p-5 max-w-screen-2xl mx-auto items-center flex-col lg:flex-row space-y-5 lg:space-y-0">
-        <div className="">
-          <h3 className="uppercase text-[25px] font-semibold">
+        <div className="text-center">
+          <h3 className="uppercase text-[20px] md:text-[25px] font-semibold">
             Гарантия 1 год
           </h3>
           <span>на весь ассортимент</span>
         </div>
-        <div>
-          <h3 className="uppercase text-[25px] font-semibold">рассрочка</h3>{" "}
+        <div className="text-center">
+          <h3 className="uppercase text-[20px] md:text-[25px] font-semibold">
+            рассрочка
+          </h3>{" "}
           Подарки
           <span>от 6 месяцев</span>
         </div>
-        <div>
-          <h3 className="uppercase text-[25px] font-semibold">Подарки</h3>
+        <div className="text-center">
+          <h3 className="uppercase text-[20px] md:text-[25px] font-semibold">
+            Подарки
+          </h3>
           <span>и бонусам к покупкам </span>
         </div>
         <div className="flex justify-center items-center space-x-6 border p-2 rounded-md backdrop-blur-lg bg-white/40 hover:cursor-pointer">

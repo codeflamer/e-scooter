@@ -10,17 +10,17 @@ export default function Home() {
     <main className="">
       <div className="mt-[21px]" />
       <BigBanner />
-      <div className="mt-[35px]" />
+      <div className="mt-[20px] md:mt-[35px]" />
       <Benefits />
-      <div className="mt-[50px]" />
+      <div className="mt-[20px] md:mt-[50px]" />
       <DisplayGoods />
-      <div className="mt-[81px]" />
+      <div className="mt-[50px] md:mt-[81px]" />
       <BannerShowCase />
-      <div className="mt-[30px]" />
+      <div className="mt-[20px] md:mt-[30px]" />
       <BannerDelivery />
-      <div className="mt-[50px]" />
+      <div className="mt-[20px] md:mt-[50px]" />
       <Reviews />
-      <div className="mt-[100px]" />
+      <div className="mt-[5px] md:mt-[100px]" />
     </main>
   );
 }

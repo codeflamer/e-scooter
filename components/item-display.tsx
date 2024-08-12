@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 
-const ItemDisplay = () => {
+const ItemDisplay = ({ product }: { product: ProductType }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   return (
     <section className=" mx-auto">
@@ -16,6 +17,13 @@ const ItemDisplay = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper2 h-[426px] rounded-md"
         >
+          <SwiperSlide>
+            <img
+              alt="here"
+              src={product.image}
+              className="w-[570px] h-[426px]"
+            />
+          </SwiperSlide>
           <SwiperSlide>
             <img
               alt="here"
@@ -80,6 +88,13 @@ const ItemDisplay = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper mt-5"
         >
+          <SwiperSlide>
+            <img
+              alt="here"
+              src={product.image}
+              className="h-[73px] rounded-lg hover:cursor-pointer"
+            />
+          </SwiperSlide>
           <SwiperSlide>
             <img
               alt="here"

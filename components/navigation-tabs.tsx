@@ -12,11 +12,11 @@ const NavigationTabs = () => {
           </span>
         </li>
         <li className="text-center">Тест-драйв</li>
-        <li>Блог</li>
-        <li>Контакты</li>
+        <li className=" hidden md:flex">Блог</li>
+        <li className=" hidden md:flex">Контакты</li>
         <li className="whitespace-nowrap">
           Акции{" "}
-          <span className="text-bold bg-base text-white px-1 py-1 md:px-2 md:py-2 rounded-full text-[14px] font-normal">
+          <span className="text-bold bg-base text-white px-1 py-1 md:px-2 md:py-2 rounded-full text-[14px] font-normal hidden md:inline">
             %
           </span>
         </li>

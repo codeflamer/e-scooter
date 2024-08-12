@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Button, Card } from "antd";
 import clsx from "clsx";
@@ -7,32 +8,45 @@ import React from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const ProductCard = ({ type }: { type: "hot" | "new" }) => {
+const ProductCard = ({
+  id,
+  type,
+  title,
+  image,
+  price,
+}: {
+  type: "hot" | "new";
+  title: string;
+  image: string;
+  id: number;
+  price: number;
+}) => {
   return (
-    <Link href="/1234/scooter">
+    <Link href={`/${id}/scooter`}>
       <Card
         hoverable
-        style={{ width: 300 }}
+        // style={{ width: 300 }}
+        className="w-full"
         cover={
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             <SwiperSlide>
               <Image
                 alt="example"
-                src="/images/scooter-pic.png"
+                src={image}
                 height="200"
                 width="200"
                 loading="lazy"
-                className="w-full"
+                className="w-full h-[200px] max-w-[200px] mx-auto"
               />
             </SwiperSlide>
             <SwiperSlide>
               <Image
                 alt="example"
-                src="/images/scooter-pic.png"
+                src={image}
                 height="200"
                 width="200"
                 loading="lazy"
-                className="w-full"
+                className="w-full h-[200px] max-w-[200px] mx-auto"
               />
             </SwiperSlide>
           </Swiper>
@@ -58,7 +72,7 @@ const ProductCard = ({ type }: { type: "hot" | "new" }) => {
             </div>
           </div>
         </div>
-        <h4 className="text-[18px] font-semibold">Kugoo Kirin M4</h4>
+        <h4 className="text-[18px] font-semibold truncate">{title}</h4>
         <div className="space-y-3 mt-5">
           <ul className="flex items-center justify-between">
             <li className="flex items-center space-x-2">
@@ -92,7 +106,7 @@ const ProductCard = ({ type }: { type: "hot" | "new" }) => {
         <div className="mt-6 flex items-center justify-between">
           <p className="flex flex-col">
             <span className="text-[#5D6C7B] line-through block">39 900 ₽</span>
-            <span className="block text-[20px] font-semibold">29 900 ₽</span>
+            <span className="block text-[20px] font-semibold">{price} ₽</span>
           </p>
           <ul className="flex space-x-3 text-[20px] text-base">
             <li className="border px-3 py-2 rounded-full">

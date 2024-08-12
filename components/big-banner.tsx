@@ -12,10 +12,10 @@ const BigBanner = () => {
             <div className="border text-white text-center border-white py-1 px-1 w-[100px] rounded-lg">
               Новинка
             </div>
-            <h3 className="text-[35px] font-semibold max-w-[550px] mt-[40px] ">
+            <h3 className="text-[30px] md:text-[35px] font-semibold max-w-[550px] mt-[40px] ">
               Электросамокаты Kugoo Kirin от официального дилера
             </h3>
-            <span className="text-[19px] mt-[20px] inline-block">
+            <span className="text-[17px] md:text-[19px] mt-[20px] inline-block">
               с бесплатной доставкой по РФ от 1 дня
             </span>
           </div>
@@ -68,13 +68,13 @@ const BigBanner = () => {
               </div>
             </div>
             <div className="relative h-full z-40">
-              <div className="z-10 h-full">
+              <div className="z-10 md:h-full">
                 <Image
                   src="/images/big-scotter.png"
                   alt="text-drive"
                   height="400"
                   width="400"
-                  className=" h-full w-full"
+                  className="md:h-full md:w-full absolute right-0 bottom-0"
                 />
               </div>
             </div>

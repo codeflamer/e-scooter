@@ -1,32 +1,21 @@
 "use client";
-import React from "react";
+import React, { Fragment } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import ProductCard from "./product-card";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { useEffect, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
+import { useProductLimit } from "@/hooks/query-hooks";
 
 const ItemsRecommendation = () => {
+  const { products, isLoading } = useProductLimit();
+
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
     if (swiperRef.current) {
       const swiperInstance = swiperRef.current;
-
-      //   swiperInstance.on("afterInit", function () {
-      //     const { isBeginning } = swiperInstance;
-      //     const prevButton = document.querySelector(
-      //       ".swiper-button-prev-custom"
-      //     ) as HTMLDivElement;
-      //     if (isBeginning) {
-      //       console.log("initialization");
-      //       prevButton.style.display = "none";
-      //     } else {
-      //       prevButton.style.display = "flex";
-      //     }
-      //     console.log("initialization");
-      //   });
 
       swiperInstance.on("slideChange", () => {
         const { isEnd, isBeginning } = swiperInstance;
@@ -51,6 +40,12 @@ const ItemsRecommendation = () => {
       });
     }
   }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  console.log(products);
 
   return (
     <section>
@@ -106,11 +101,23 @@ const ItemsRecommendation = () => {
           >
             <RightOutlined className="cursor-pointer" />
           </div>
-          {Array.from({ length: 5 }).map((elem, index) => (
-            <SwiperSlide key={index}>
-              <ProductCard type="hot" />
-            </SwiperSlide>
-          ))}
+
+          {products!.length > 0 &&
+            products!.map((product, index) => (
+              <SwiperSlide key={product.id}>
+                <div className="mr-3">
+                  <ProductCard
+                    id={product.id}
+                    type={
+                      ["hot", "new"][Math.floor(index + 1) % 2] as "hot" | "new"
+                    }
+                    title={product.title}
+                    image={product.image}
+                    price={product.price}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </section>

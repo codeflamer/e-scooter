@@ -4,7 +4,7 @@ import React from "react";
 
 const BannerShowCase = () => {
   return (
-    <section className="px-5 flex justify-between max-w-screen-2xl mx-auto space-y-10 lg:space-y-0 lg:space-x-10 flex-col lg:flex-row">
+    <section className="px-5 flex justify-between max-w-screen-2xl mx-auto space-y-5 xl:space-y-0 xl:space-x-5 flex-col xl:flex-row">
       <div className="rounded-lg flex justify-between bg-[#F4F7FB] relative h-[250px]">
         <div className="space-y-4 ml-[40px] w-[400px] flex flex-col justify-center">
           <div className="font-semibold text-[30px]">

@@ -1,8 +1,18 @@
 "use client";
 import { Button } from "antd";
 import ProductCard from "./product-card";
+import { useProducts } from "@/hooks/query-hooks";
+import { Fragment } from "react";
 
 const DisplayGoods = () => {
+  const { products, isLoading } = useProducts();
+
+  console.log(products);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section>
       <div className="p-5 max-w-screen-2xl mx-auto">
@@ -31,7 +41,7 @@ const DisplayGoods = () => {
             </Button>
             <Button
               htmlType="button"
-              className="!bg-[#F4F7FB] !text-[#5D6C7B] !py-5 !font-semibold !px-4 !border-none !text-[14px]"
+              className="!bg-[#F4F7FB] !text-[#5D6C7B] !py-5 !font-semibold !px-4 !border-none !text-[14px] mt-4 md:mt-0"
             >
               Для взрослых
             </Button>
@@ -39,15 +49,21 @@ const DisplayGoods = () => {
         </div>
         {/* The bottom part */}
         <div className="relative mt-[40px] flex flex-col items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9  ">
-            <ProductCard type="hot" />
-            <ProductCard type="new" />
-            <ProductCard type="hot" />
-            <ProductCard type="new" />
-            <ProductCard type="hot" />
-            <ProductCard type="new" />
-            <ProductCard type="hot" />
-            <ProductCard type="new" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 w-full">
+            {products!.length > 0 &&
+              products!.map((product, index) => (
+                <Fragment key={product.id}>
+                  <ProductCard
+                    id={product.id}
+                    type={
+                      ["hot", "new"][Math.floor(index + 1) % 2] as "hot" | "new"
+                    }
+                    title={product.title}
+                    image={product.image}
+                    price={product.price}
+                  />
+                </Fragment>
+              ))}
           </div>
         </div>
       </div>

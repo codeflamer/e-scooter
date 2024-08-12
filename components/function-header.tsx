@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Badge, Button } from "antd";
 import {
@@ -24,7 +25,9 @@ const FunctionHeader = () => {
           <AlignRightOutlined />
           Каталог
         </Button>
-        <Search />
+        <div className="w-full hidden sm:flex">
+          <Search />
+        </div>
       </div>
       <div>
         <ul className="flex space-x-9 items-center">

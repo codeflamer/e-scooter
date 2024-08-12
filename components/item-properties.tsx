@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   HeartOutlined,
   QuestionCircleOutlined,
@@ -7,11 +8,11 @@ import { Button } from "antd";
 import clsx from "clsx";
 import React from "react";
 
-const ItemProperties = () => {
+const ItemProperties = ({ product }: { product: ProductType }) => {
   return (
     <div className="text-base-black flex-1">
       <div>
-        <h2 className="font-semibold text-[35px]">Kugoo Kirin M4</h2>
+        <h2 className="font-semibold text-[35px]">{product.title}</h2>
         <ul className="text-[12px] flex space-x-7 text-[#5D6C7B]">
           <li>Просмотров 350</li>
           <li>Купили 196 раз</li>
@@ -43,7 +44,7 @@ const ItemProperties = () => {
       <div className="flex justify-between items-center space-x-5 mt-[32px]">
         <div>
           <span className="block line-through text-[#5D6C7B]">39 900 ₽</span>
-          <span className="text-[25px] font-semibold">29 900 ₽</span>
+          <span className="text-[25px] font-semibold">{product.price} ₽</span>
         </div>
         <div className="bg-[#F4F7FB] py-[7px] px-[14px] flex justify-between space-x-5 items-center rounded-lg">
           <p>
@@ -228,7 +229,9 @@ const ItemProperties = () => {
       </div>
       <div className="px-[30px] py-[27px] bg-[#F4F7FB] rounded-lg mt-[30px]">
         <div className="flex items-center justify-between">
-          <span className="text-[35px] font-semibold">45 900 руб.</span>
+          <span className="text-[35px] font-semibold">
+            {product.price} руб.
+          </span>
           <div className="text-[#6F73EE] text-[20px] border rounded-full w-[40px] h-[40px] flex flex-col items-center justify-center cursor-pointer">
             <HeartOutlined />
           </div>
