@@ -7,8 +7,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import ReactQueryProvider from "@/lib/react-query-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-
-const inter = Inter({ subsets: ["latin"] });
+import { jost } from "./font";
 
 export const metadata: Metadata = {
   title: "Scooter E-commerce",
@@ -22,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jost.className}>
         <ReactQueryProvider>
           <AntdRegistry>
             <Header />

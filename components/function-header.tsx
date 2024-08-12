@@ -28,10 +28,11 @@ const FunctionHeader = () => {
       </div>
       <div>
         <ul className="flex space-x-9 items-center">
-          <li>
-            <PartitionOutlined
-              className="cursor-pointer"
-              style={{ fontSize: "20px", color: "black" }}
+          <li className="w-[25px] h-[25px]">
+            <img
+              alt="example"
+              src="/icons/Scale.svg"
+              className="w-[25px] h-[25px] cursor-pointer"
             />
           </li>
           <li>
@@ -40,15 +41,15 @@ const FunctionHeader = () => {
               style={{ fontSize: "20px", color: "black" }}
             />
           </li>
-          <li className="space-x-1 inline-block">
-            <Link href="/cart">
+          <li className="space-x-1">
+            <Link href="/cart" className="flex space-x-1 items-center">
               <Badge count={5} offset={[0, 20]} size="small">
                 <ShoppingCartOutlined
                   className="cursor-pointer"
                   style={{ fontSize: "20px", color: "black" }}
                 />
               </Badge>
-              <span className="text-[18px]"> Корзина</span>
+              <span className="text-[18px] hidden md:flex"> Корзина</span>
             </Link>
           </li>
         </ul>

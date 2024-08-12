@@ -4,9 +4,9 @@ import React from "react";
 
 const NavMenu = () => {
   return (
-    <nav className="flex justify-between p-5 items-center ">
+    <nav className="flex justify-between p-5 items-center space-x-3">
       <section className="flex items-center space-x-7">
-        <div>
+        <div className="w-[60px] ">
           <Image
             src="/logo/service.svg"
             alt="service"
@@ -18,7 +18,7 @@ const NavMenu = () => {
         <div className="text-[#5D6C7B] cursor-pointer">Сотрудничество</div>
         <div className="text-[#5D6C7B] cursor-pointer">Заказать звонок</div>
         <ul className="flex space-x-4">
-          <li>
+          <li className="w-[25px] h-[25px]">
             <Image
               src="/logo/viber 1.svg"
               alt="service"
@@ -27,7 +27,7 @@ const NavMenu = () => {
               className="cursor-pointer"
             />
           </li>
-          <li>
+          <li className="w-[25px] h-[25px]">
             <Image
               src="/logo/whatsapp.svg"
               alt="service"
@@ -36,7 +36,7 @@ const NavMenu = () => {
               className="cursor-pointer"
             />
           </li>
-          <li>
+          <li className="w-[25px] h-[25px]">
             <Image
               src="/logo/telegram.svg"
               alt="service"

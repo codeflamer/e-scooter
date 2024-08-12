@@ -7,12 +7,12 @@ const BigBanner = () => {
   return (
     <section className="bg-radial-banner px-5 md:px-5 mx-5 rounded-lg">
       <div className="rounded-lg text-white flex justify-between max-w-screen-2xl mx-auto space-x-6 relative">
-        <div className="py-[50px] max-w-screen-2xl ">
-          <div>
+        <div className="py-[50px] max-w-screen-2xl z-[99]">
+          <div className="">
             <div className="border text-white text-center border-white py-1 px-1 w-[100px] rounded-lg">
               Новинка
             </div>
-            <h3 className="text-[35px] font-semibold max-w-[550px] mt-[40px]">
+            <h3 className="text-[35px] font-semibold max-w-[550px] mt-[40px] ">
               Электросамокаты Kugoo Kirin от официального дилера
             </h3>
             <span className="text-[19px] mt-[20px] inline-block">
@@ -41,8 +41,8 @@ const BigBanner = () => {
           {/* right side */}
           <div className=" absolute right-0 bottom-0 w-[600px] h-[450px]">
             <div className="relative z-50">
-              <div className="absolute bottom-[-340px] left-[-200px] border border-white/30 py-[13px] text-center px-[13px] backdrop-blur-md bg-white/20 w-[250px] rounded-lg">
-                <span className="flex items-center justify-center space-x-2">
+              <div className="absolute hidden lg:block bottom-[-340px] left-[-200px] border border-white/30 py-[13px] text-center px-[13px] backdrop-blur-md bg-white/20 w-[250px] rounded-lg">
+                <span className="flex items-center justify-center space-x-2 ">
                   <Image
                     src="/images/light.png"
                     alt="text-drive"
@@ -51,7 +51,7 @@ const BigBanner = () => {
                   />
                   <p>Тест-драйв и обучение</p>
                 </span>
-                <div className="absolute right-[20px] bg-white text-base rounded-md py-1 text-center w-[110px]">
+                <div className=" absolute right-[20px] bg-white text-base rounded-md py-1 text-center w-[110px]">
                   Бесплатно
                 </div>
                 <div className="absolute right-[-120px] top-[20px] w-[130px] rotate-[5deg]">
