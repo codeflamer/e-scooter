@@ -65,7 +65,15 @@ const FooterContent = () => {
           <span className="text-[25px] font-bold text-[#282739]">KUGOO</span>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
             <div className="bg-white rounded-md flex items-center space-x-3 p-3 max-w-[200px] cursor-pointer hover:scale-105 transition-all">
-              <span>Icon</span>
+              <span>
+                {" "}
+                <Image
+                  src="/logo/playstore.svg"
+                  height="25"
+                  width="25"
+                  alt="apple-icon"
+                />
+              </span>
               <div className="flex flex-col">
                 <span className="text-[12px] inline-block">Доступно на</span>
                 <span className="font-bold text-[16px] md:text-[20px] inline-block">
