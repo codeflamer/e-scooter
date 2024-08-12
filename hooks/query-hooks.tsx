@@ -4,11 +4,11 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 export const useProducts = () => {
   const queryClient = useQueryClient();
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isSuccess } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
-  return { products: data, isLoading };
+  return { products: data, isLoading, isSuccess };
 };
 
 export const useProduct = (productId: number) => {
@@ -24,9 +24,9 @@ export const useProduct = (productId: number) => {
 export const useProductLimit = () => {
   const queryClient = useQueryClient();
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, error, isSuccess } = useQuery({
     queryKey: ["products"],
     queryFn: getProductLimit,
   });
-  return { products: data, isLoading };
+  return { products: data, isLoading, error, isSuccess };
 };

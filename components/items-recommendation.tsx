@@ -9,7 +9,7 @@ import { Swiper as SwiperType } from "swiper";
 import { useProductLimit } from "@/hooks/query-hooks";
 
 const ItemsRecommendation = () => {
-  const { products, isLoading } = useProductLimit();
+  const { products, isLoading, isSuccess } = useProductLimit();
 
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -44,8 +44,6 @@ const ItemsRecommendation = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
-  console.log(products);
 
   return (
     <section>
@@ -101,8 +99,8 @@ const ItemsRecommendation = () => {
           >
             <RightOutlined className="cursor-pointer" />
           </div>
-
-          {products!.length > 0 &&
+          {isSuccess ? (
+            products!.length > 0 &&
             products!.map((product, index) => (
               <SwiperSlide key={product.id}>
                 <div className="mr-3">
@@ -111,13 +109,16 @@ const ItemsRecommendation = () => {
                     type={
                       ["hot", "new"][Math.floor(index + 1) % 2] as "hot" | "new"
                     }
-                    title={product.title}
-                    image={product.image}
-                    price={product.price}
+                    product={product}
                   />
                 </div>
               </SwiperSlide>
-            ))}
+            ))
+          ) : (
+            <div className="text-center">
+              Could not fetch products, something went wrong :)
+            </div>
+          )}
         </Swiper>
       </div>
     </section>

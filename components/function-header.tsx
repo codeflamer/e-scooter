@@ -1,18 +1,19 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Badge, Button } from "antd";
 import {
   AlignRightOutlined,
-  CaretDownOutlined,
   HeartOutlined,
-  PartitionOutlined,
-  SearchOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import Search from "./search";
 import Link from "next/link";
+import { useProductCart } from "@/app/cart/carts.store";
 
 const FunctionHeader = () => {
+  const cartItems = useProductCart((state) => state.cartItems);
+
   return (
     <div className="flex justify-between items-center p-5 space-x-10">
       <span className="text-[25px] font-bold">KUGOO</span>
@@ -46,7 +47,12 @@ const FunctionHeader = () => {
           </li>
           <li className="space-x-1">
             <Link href="/cart" className="flex space-x-1 items-center">
-              <Badge count={5} offset={[0, 20]} size="small">
+              <Badge
+                count={cartItems.length}
+                offset={[0, 20]}
+                size="small"
+                showZero
+              >
                 <ShoppingCartOutlined
                   className="cursor-pointer"
                   style={{ fontSize: "20px", color: "black" }}

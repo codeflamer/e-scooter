@@ -5,12 +5,12 @@ import { useProducts } from "@/hooks/query-hooks";
 import { Fragment } from "react";
 
 const DisplayGoods = () => {
-  const { products, isLoading } = useProducts();
+  const { products, isLoading, isSuccess } = useProducts();
 
   console.log(products);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="text-center text-[20px]">Loading Products...</div>;
   }
 
   return (
@@ -50,7 +50,8 @@ const DisplayGoods = () => {
         {/* The bottom part */}
         <div className="relative mt-[40px] flex flex-col items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 w-full">
-            {products!.length > 0 &&
+            {isSuccess &&
+              products!.length > 0 &&
               products!.map((product, index) => (
                 <Fragment key={product.id}>
                   <ProductCard
@@ -58,14 +59,17 @@ const DisplayGoods = () => {
                     type={
                       ["hot", "new"][Math.floor(index + 1) % 2] as "hot" | "new"
                     }
-                    title={product.title}
-                    image={product.image}
-                    price={product.price}
+                    product={product}
                   />
                 </Fragment>
               ))}
           </div>
         </div>
+        {!isSuccess && (
+          <div className="text-center w-full mx-auto">
+            Something went wrong. Could not fetch data :)
+          </div>
+        )}
       </div>
     </section>
   );
